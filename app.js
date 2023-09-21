@@ -1,24 +1,12 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./routes/authentication");
 const appoitmentRouter = require("./routes/appointments");
 const { errorHandler } = require("./middlewares/errorHandling");
 
 const app = express();
-
-const mongoURL = process.env.MONGODB_URL;
-mongoose
-  .connect(mongoURL)
-  .then((res) => {
-    //console.log(res)
-    console.log("connection success");
-  })
-  .catch((err) => {
-    console.log("connection error", err);
-  });
 
 app.use(cors({
   origin: "https://ccript-task-b-ackend-77ir.vercel.app",
