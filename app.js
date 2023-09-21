@@ -8,9 +8,17 @@ const { errorHandler } = require("./middlewares/errorHandling");
 
 const app = express();
 
-app.use(cors({
-  origin: "https://ccript-front-end.vercel.app/",
-}))
+
+const corsOptions = {
+  origin: 'https://ccript-front-end.vercel.app/',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.options('*', cors(corsOptions));
+
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use("/api/appointments", appoitmentRouter);
 app.use("/api", userRouter);
