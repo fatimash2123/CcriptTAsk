@@ -9,7 +9,7 @@ const { errorHandler } = require("./middlewares/errorHandling");
 const app = express();
 
 app.use(cors({
-  origin: "https://ccript-task-b-ackend-77ir.vercel.app",
+  origin: "https://ccript-front-end.vercel.app/",
 }))
 app.use(express.json());
 app.use("/api/appointments", appoitmentRouter);
