@@ -21,7 +21,7 @@ mongoose
   });
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://ccript-task-b-ackend-77ir.vercel.app",
 }))
 app.use(express.json());
 app.use("/api/appointments", appoitmentRouter);
